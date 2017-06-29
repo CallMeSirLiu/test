@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>该站点不可访问</title>
+</head>
+<style type="text/css">
+    html,body{
+        background-color: #efefef;
+    }
+    .container{
+        width: 800px;
+        margin: 80px auto 0;
+        background-color: #fff;
+        border-radius: 2px;
+        padding-bottom: 30px;
+    }
+
+    .container p{
+        font-size: 14px;
+        line-height: 24px;
+        color: #666;
+        padding: 5px 50px;
+        text-indent: 28px;
+        text-align: left;
+    }
+    .container .title{
+        font-size: 18px;
+        line-height: 30px;
+        padding: 20px 50px 10px 50px;
+    }
+    .container div{
+        text-align: center;
+    }
+    .container div a{
+        font-family: PingFangSC-Regular;
+        font-size: 14px;
+        line-height: 14px;
+        color: #FFFFFF;
+        letter-spacing: 0px;
+        padding: 12px 20px;
+        outline: none;
+        display: inline-block;
+        border: none;
+        background: #8596B5;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        margin: 0 20px;
+    }
+    .container div a.orgBtn{
+        background-color: #56B947;
+    }
+    ul,li{
+        list-style: none;
+    }
+
+</style>
+<body>
+    <div class="container">
+        <p class="title">亲爱的用户：</p>
+        <div class="content">
+            <p>当你看到该页面时，表示您访问的url地址无法正常访问。</p>
+            <p>可能的原因如下：</p>
+            <ul>
+                <li>
+                    <p>
+                    1. 您输入的网站地址错误，请检查地址栏中的地址是否正确；
+                    </p>
+                </li>
+                <li>
+                    <p>
+                    2. 你要访问过的站点已经不再接受访问，我司将不再提供访问服务；
+                    </p>
+                </li>
+                <li>
+                    <p>
+                    3. 您访问的站点已经迁移至别处，我们下方会提供可能的站点，请您选择跳转；
+                    </p>
+                </li>
+            </ul>
+            <p>由此给您带来的不便，我们深表谦意！感请您一直的支持！</p>
+            <p style="text-align: right;margin-right: 1px;">金石研发组</p>
+            <p style="text-align: right;" id="nowDate">2017年3月7日</p>
+            <br>
+        </div>
+        <div>
+            <a href="http://www.ezsvs.com">金石易服官网</a>
+            <a href="http://wedo.ezsvsbox.com/" class="orgBtn">新版wedo</a>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+    function getNowFormatDate() {
+        var date = new Date();
+        var month = date.getMonth() + 1;
+        var strDate = date.getDate();
+        return currentdate = date.getFullYear() + '年' + month + '月' + strDate
+                + "日";
+    }
+    
+    document.getElementById('nowDate').innerHTML = getNowFormatDate()
+</script>
+</html>

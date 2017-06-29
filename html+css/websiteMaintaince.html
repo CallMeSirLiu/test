@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>网站维护中</title>
+</head>
+<style type="text/css">
+    html,body{
+        background-color: #efefef;
+    }
+    .container{
+        width: 800px;
+        margin: 80px auto 0;
+        background-color: #fff;
+        border-radius: 2px;
+        padding-bottom: 30px;
+    }
+
+    .container p{
+        font-size: 14px;
+        line-height: 24px;
+        color: #666;
+        padding: 5px 50px;
+        text-indent: 28px;
+        text-align: left;
+    }
+    .container .title{
+        font-size: 18px;
+        line-height: 30px;
+        padding: 20px 50px 10px 50px;
+    }
+    .container div{
+        text-align: center;
+    }
+    .container div a{
+        font-family: PingFangSC-Regular;
+        font-size: 14px;
+        line-height: 14px;
+        color: #FFFFFF;
+        letter-spacing: 0px;
+        padding: 12px 20px;
+        outline: none;
+        display: inline-block;
+        border: none;
+        background: #8596B5;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        margin: 0 20px;
+    }
+    .container div a.orgBtn{
+        background-color: #56B947;
+    }
+    ul,li{
+        list-style: none;
+    }
+
+</style>
+
+<body>
+    <div class="container">
+        <p class="title">亲爱的用户：</p>
+        <div class="content">
+            <p>当你看到该页面时，表示您访问的url地址是正确的。但是，很抱歉，当前站点暂时无法向您提供服务。</p>
+            <p>原因如下：</p>
+            <ul>
+                <li><p>当前站点正在进行维护（升级），以便向您提供更优质服务，请您见谅！</p></li>
+            </ul>
+            <p>维护时间一般在半个小时以内</p> 
+            <p>由此给您带来的不便，我们深表谦意！感请您一直的支持！</p>
+            <p style="text-align: right;margin-right: 1px;">金石研发组</p>
+            <p style="text-align: right;" id="nowDate">2017年3月7日</p>
+            <br>
+        </div>
+        <div>
+            <a >紧急请联系：18911892108（刘）</a>
+            <!-- <a class="orgBtn"></a> -->
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+    function getNowFormatDate() {
+        var date = new Date();
+        var month = date.getMonth() + 1;
+        var strDate = date.getDate();
+        return currentdate = date.getFullYear() + '年' + month + '月' + strDate
+                + "日";
+    }
+    
+    document.getElementById('nowDate').innerHTML = getNowFormatDate()
+</script>
+</html>
