@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>iframe上传伪代码</title>
+	
+</head>
+<body>
+
+	<form action="./upload" target="for_update" id="upload_form" for="for_update" method="post" enctype="multipart/form-data">
+		<input type="file" name="file" id="upload" accept=".jpg,.jpeg,.png,.bmp">
+	</form>
+
+	<iframe name="for_update" style="display:none;"></iframe>
+
+	
+</body>
+
+<script type = "text/javascript">
+	//上传文档
+	$('#upload').on('change', function() {     
+		if ($(this).hasClass('clicked')) {        
+			yzalert('附件上传中，请稍后...');        
+			return;    
+		}    
+		var  file = $(this)[0];  
+		var  files = file.files;  
+		var  file_size = files[0] && files[0].size;   // yzalert(file_size);
+		  
+		if (file_size <= 2 * 1024 * 1024) {      
+			$('form#upload_form').submit();      
+			$(this).addClass('clicked');       // $('#upload_tip').html('上传中...');
+		} else {      
+			yzalert('上传的文件超出2M，请重新选择');  
+		}   
+		$(this).val('');
+	})
+
+	//上传回调
+	function  uploadCallback(data) {    
+		$('#upload').removeClass('clicked');    
+		console.log(data);     
+		if (data.r == 1) {        
+			$("img[data-id=" + data.data_id + "]").attr('src', yz_avatar + '/' + data.info.savename);    
+		} else  if (data.r == 0) {        
+			yzalert(data.msg);    
+		}    
+		return;     
+		yzalert(data.msg);
+	}
+</script>
+</html>
